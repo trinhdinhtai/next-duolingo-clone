@@ -1,3 +1,5 @@
+import { ClerkProvider } from "@clerk/nextjs"
+
 import { TailwindIndicator } from "@/components/tailwind-indicator"
 
 import "./globals.css"
@@ -18,11 +20,13 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
-        {children}
-        <TailwindIndicator />
-      </body>
-    </html>
+    <ClerkProvider>
+      <html lang="en" suppressHydrationWarning>
+        <body className={inter.className}>
+          {children}
+          <TailwindIndicator />
+        </body>
+      </html>
+    </ClerkProvider>
   )
 }
