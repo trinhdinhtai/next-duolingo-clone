@@ -23,7 +23,9 @@ export default function Header() {
         </div>
 
         <ClerkLoading>
-          <Loader className="h-5 w-5 animate-spin text-muted-foreground" />
+          <Button size="lg" variant="ghost">
+            <Loader className="h-5 w-5 animate-spin text-muted-foreground" />
+          </Button>
         </ClerkLoading>
 
         <ClerkLoaded>
