@@ -2,12 +2,35 @@ import Image from "next/image"
 import Link from "next/link"
 
 import { cn } from "@/lib/utils"
+import { SidebarItem } from "@/components/layout/sidebar-item"
 
 interface SidebarProps {
   className?: string
 }
 
 export default function Sidebar({ className }: SidebarProps) {
+  const sidebarItems = [
+    {
+      label: "Learn",
+      iconSrc: "/learn.svg",
+      href: "/learn",
+    },
+    {
+      label: "Leaderboard",
+      href: "/leaderboard",
+      iconSrc: "/leaderboard.svg",
+    },
+    {
+      label: "quests",
+      href: "/quests",
+      iconSrc: "/quests.svg",
+    },
+    {
+      label: "shop",
+      href: "/shop",
+      iconSrc: "/shop.svg",
+    },
+  ]
   return (
     <div
       className={cn(
@@ -24,7 +47,16 @@ export default function Sidebar({ className }: SidebarProps) {
         </div>
       </Link>
 
-      <div className="flex flex-1 flex-col gap-y-2"></div>
+      <div className="flex flex-1 flex-col gap-y-2">
+        {sidebarItems.map((item) => (
+          <SidebarItem
+            key={item.href}
+            label={item.label}
+            href={item.href}
+            iconSrc={item.iconSrc}
+          />
+        ))}
+      </div>
     </div>
   )
 }
