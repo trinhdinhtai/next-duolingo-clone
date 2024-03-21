@@ -1,3 +1,4 @@
+import FeedWrapper from "@/components/feed-wrapper"
 import { StickyWrapper } from "@/components/sticky-wrapper"
 import UserProgress from "@/components/user-progress"
 
@@ -7,6 +8,8 @@ export default function LearnPage() {
       <StickyWrapper>
         <UserProgress />
       </StickyWrapper>
+
+      <FeedWrapper></FeedWrapper>
     </div>
   )
 }
