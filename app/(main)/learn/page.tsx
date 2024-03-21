@@ -11,6 +11,7 @@ export default function LearnPage() {
       </StickyWrapper>
 
       <FeedWrapper>
+        {/* TODO: replace with actual header title */}
         <FeedHeader title="header" />
         <div className="h-[2000px]"></div>
       </FeedWrapper>

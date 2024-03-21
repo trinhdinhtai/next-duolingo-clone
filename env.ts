@@ -3,7 +3,7 @@ import { z } from "zod"
 
 export const env = createEnv({
   server: {
-    // DATABASE_URL: z.string().url(),
+    DATABASE_URL: z.string().url(),
     // OPEN_AI_API_KEY: z.string().min(1),
   },
   client: {
@@ -13,7 +13,7 @@ export const env = createEnv({
   runtimeEnv: {
     NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY:
       process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY,
-    // DATABASE_URL: process.env.DATABASE_URL,
+    DATABASE_URL: process.env.DATABASE_URL,
     // OPEN_AI_API_KEY: process.env.OPEN_AI_API_KEY,
   },
   // For Next.js >= 13.4.4, you only need to destructure client variables:
